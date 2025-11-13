@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart'; // 🟢 ADICIONADO
 import 'firebase_options.dart';
 import 'screens/login_page.dart';
 
-
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Inicializar Firebase
+  // 🟢 Carrega variáveis do arquivo .env (antes de tudo)
+  await dotenv.load(fileName: ".env");
+
+  // 🔥 Inicializa o Firebase
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -26,7 +29,7 @@ class NutriFCEApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: const LoginPage(), // 🚀 agora inicia na tela de Login
+      home: const LoginPage(), // 🚀 Tela inicial continua sendo o login
     );
   }
 }

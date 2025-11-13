@@ -5,3 +5,4 @@ build/
 android/ 
 node_modules/ 
 .env 
+.env 
