@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'esqueceu_senha_page.dart';
+import 'home_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -7,6 +8,12 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,      // Fundo branco
+        foregroundColor: Colors.indigo,     // Cor da seta
+        elevation: 0,                       // Remove sombra
+        automaticallyImplyLeading: true,    // Mostra a seta de voltar automaticamente
+      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -93,8 +100,12 @@ class LoginPage extends StatelessWidget {
                       elevation: 3,
                     ),
                     onPressed: () {
-                      // ação do botão entrar
+                      Navigator.push(
+                        context,
+                      MaterialPageRoute(builder: (context) => const HomePage()),
+                       );
                     },
+
                     child: const Text(
                       "Entrar",
                       style: TextStyle(

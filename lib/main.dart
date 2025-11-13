@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'screens/login_page.dart';
 
-void main() {
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Inicializar Firebase
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const NutriFCEApp());
 }
 
@@ -14,9 +24,9 @@ class NutriFCEApp extends StatelessWidget {
       title: 'NutriFCE',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.indigo, // cor principal do app
+        primarySwatch: Colors.indigo,
       ),
-      home: const LoginPage(),
+      home: const LoginPage(), // 🚀 agora inicia na tela de Login
     );
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'autenticacao_email_page.dart';
+import 'autenticacao_telefone_page.dart';
 
 class EsqueceuSenhaPage extends StatelessWidget {
   const EsqueceuSenhaPage({super.key});
@@ -6,6 +8,12 @@ class EsqueceuSenhaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,      // Fundo branco
+        foregroundColor: Colors.indigo,     // Cor da seta e do título
+        elevation: 0,                       // Sem sombra
+        automaticallyImplyLeading: true,   // Ativa a seta padrão de voltar
+      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -16,7 +24,7 @@ class EsqueceuSenhaPage extends StatelessWidget {
                 'Formas de recuperação\nde senha:',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 18,
                   color: Colors.indigo,
                 ),
               ),
@@ -33,7 +41,12 @@ class EsqueceuSenhaPage extends StatelessWidget {
                     elevation: 3,
                   ),
                   onPressed: () {
-                    // Aqui você pode adicionar a navegação para a tela de recuperação por email
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AutenticacaoEmailPage(),
+                      ),
+                    );
                   },
                   child: const Text(
                     'Email',
@@ -58,7 +71,12 @@ class EsqueceuSenhaPage extends StatelessWidget {
                     elevation: 3,
                   ),
                   onPressed: () {
-                    // Aqui você pode adicionar a navegação para a tela de recuperação por telefone
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AutenticacaoTelefonePage(),
+                      ),
+                    );
                   },
                   child: const Text(
                     'Telefone',
@@ -76,3 +94,4 @@ class EsqueceuSenhaPage extends StatelessWidget {
     );
   }
 }
+
