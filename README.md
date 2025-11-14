@@ -1,6 +1,7 @@
-# nutrifce
+# NutrIFCE
 
-A new Flutter project.
+Projeto de POO sobre um aplicativo, conectado com o Gemini, para auxiliar o 
+usuário na sua nutrição do dia-a-dia.
 
 ## Getting Started
 
