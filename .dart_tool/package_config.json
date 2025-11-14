@@ -165,9 +165,9 @@
     },
     {
       "name": "image_picker",
-      "rootUri": "file:///C:/Users/tecno/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker-1.2.0",
+      "rootUri": "file:///C:/Users/tecno/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker-1.2.1",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.7"
     },
     {
       "name": "image_picker_android",
