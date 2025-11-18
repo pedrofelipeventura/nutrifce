@@ -121,7 +121,7 @@ class HomePage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => const ChatPage()),
                   );
                 },
-                child: Container(
+                child: SizedBox(
                   height: 60,
                   child: const Center(
                     child: Icon(
