@@ -39,9 +39,9 @@
     },
     {
       "name": "cross_file",
-      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/cross_file-0.3.5",
+      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/cross_file-0.3.5+1",
       "packageUri": "lib/",
-      "languageVersion": "3.7"
+      "languageVersion": "3.8"
     },
     {
       "name": "cupertino_icons",
@@ -57,13 +57,13 @@
     },
     {
       "name": "file_selector_linux",
-      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/file_selector_linux-0.9.3+2",
+      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/file_selector_linux-0.9.3+3",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.8"
     },
     {
       "name": "file_selector_macos",
-      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/file_selector_macos-0.9.4+5",
+      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/file_selector_macos-0.9.4+6",
       "packageUri": "lib/",
       "languageVersion": "3.9"
     },
@@ -75,9 +75,9 @@
     },
     {
       "name": "file_selector_windows",
-      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/file_selector_windows-0.9.3+4",
+      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/file_selector_windows-0.9.3+5",
       "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "3.8"
     },
     {
       "name": "firebase_auth",
@@ -171,19 +171,19 @@
     },
     {
       "name": "image_picker_android",
-      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_android-0.8.13+7",
+      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_android-0.8.13+8",
       "packageUri": "lib/",
       "languageVersion": "3.9"
     },
     {
       "name": "image_picker_for_web",
-      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_for_web-3.1.0",
+      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_for_web-3.1.1",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.8"
     },
     {
       "name": "image_picker_ios",
-      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_ios-0.8.13+1",
+      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_ios-0.8.13+2",
       "packageUri": "lib/",
       "languageVersion": "3.9"
     },
@@ -249,9 +249,9 @@
     },
     {
       "name": "meta",
-      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.16.0",
+      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.17.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.5"
     },
     {
       "name": "mime",
@@ -309,7 +309,7 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/test_api-0.7.6",
+      "rootUri": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache/hosted/pub.dev/test_api-0.7.7",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
@@ -345,8 +345,8 @@
     }
   ],
   "generator": "pub",
-  "generatorVersion": "3.9.2",
+  "generatorVersion": "3.10.0",
   "flutterRoot": "file:///E:/Programas/flutter",
-  "flutterVersion": "3.35.7",
+  "flutterVersion": "3.38.1",
   "pubCache": "file:///C:/Users/Miguel/AppData/Local/Pub/Cache"
 }
