@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart'; // 🟢 ADICIONADO
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'firebase_options.dart';
 import 'screens/login_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // 🟢 Carrega variáveis do arquivo .env (antes de tudo)
-  await dotenv.load(fileName: ".env");
+  try {
+    // Carrega variáveis do arquivo .env
+    // Nota: Certifique-se de que .env está listado em 'assets' no pubspec.yaml
+    await dotenv.load(fileName: ".env");
 
-  // 🔥 Inicializa o Firebase
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+    // Inicializa o Firebase
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  } catch (e) {
+    // Em caso de erro, imprime no console para facilitar o debug
+    debugPrint("ERRO CRÍTICO NA INICIALIZAÇÃO: $e");
+    // Se estiver na web, o erro pode aparecer no console do navegador (F12)
+  }
 
   runApp(const NutriFCEApp());
 }
@@ -29,7 +36,7 @@ class NutriFCEApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: const LoginPage(), // 🚀 Tela inicial continua sendo o login
+      home: const LoginPage(),
     );
   }
 }

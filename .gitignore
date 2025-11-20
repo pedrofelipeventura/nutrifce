@@ -1,8 +1,4 @@
-node_modules/ 
-.env 
-build/ 
-.dart_tool/ 
-android/ 
-node_modules/ 
-.env 
-.env 
+node_modules/
+build/
+.dart_tool/
+android/
