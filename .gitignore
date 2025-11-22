@@ -1,25 +1,9 @@
-# Flutter
-.dart_tool/
-.packages
-.flutter-plugins
-.flutter-plugins-dependencies
-.metadata
-build/
-.gradle/
-ios/Flutter/Flutter.podspec
-ios/Pods/
-ios/.symlinks/
-ios/Flutter/ephemeral/
-macos/Flutter/ephemeral/
-web/
-# Java + Maven
-target/
-**/logs/
-*.log
-*.class
-.mvn/wwrapper/maven-wrapper.jar
-# Node
-node_modules/
-# IDEs
-.idea/
-.vscode/
+/build/ 
+.dart_tool/ 
+.idea/ 
+.vscode/ 
+*.log 
+*.lock 
+.flutter-plugins 
+.flutter-plugins-dependencies 
+.metadata 
