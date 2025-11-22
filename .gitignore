@@ -1,4 +1,25 @@
-node_modules/
-build/
+# Flutter
 .dart_tool/
-android/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+build/
+.gradle/
+ios/Flutter/Flutter.podspec
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/ephemeral/
+macos/Flutter/ephemeral/
+web/
+# Java + Maven
+target/
+**/logs/
+*.log
+*.class
+.mvn/wwrapper/maven-wrapper.jar
+# Node
+node_modules/
+# IDEs
+.idea/
+.vscode/
