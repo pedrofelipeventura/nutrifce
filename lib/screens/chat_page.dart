@@ -3,41 +3,30 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-// 🔐 O token agora vem do arquivo .env (NUNCA coloque ele aqui no código!)
-final String huggingFaceToken = dotenv.env['HUGGING_FACE_TOKEN'] ?? "";
-
-// Função para conversar com o Hugging Face (modelo Blenderbot)
-Future<String> sendMessageToHuggingFace(String userMessage) async {
-  const modelUrl =
-      "https://api-inference.huggingface.co/models/facebook/blenderbot-400M-distill";
-
-  if (huggingFaceToken.isEmpty) {
-    return "Erro: token do Hugging Face não configurado.";
-  }
+// Função para enviar mensagem ao Ollama usando Qwen 2.5 (1.5B)
+Future<String> sendMessageToOllama(String prompt) async {
+  const url = "http://127.0.0.1:11434/api/generate";
 
   try {
     final response = await http.post(
-      Uri.parse(modelUrl),
-      headers: {
-        "Authorization": "Bearer $huggingFaceToken",
-        "Content-Type": "application/json",
-      },
-      body: jsonEncode({"inputs": userMessage}),
+      Uri.parse(url),
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode({
+        "model": "qwen2.5:1.5b", // 👈 modelo rápido e excelente
+        "prompt": prompt,
+        "stream": false,
+      }),
     );
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
-      final reply = data[0]?["generated_text"];
-      return reply ?? "Desculpe, não entendi.";
+      return data["response"] ?? "Sem resposta.";
     } else {
-      print("Erro ${response.statusCode}: ${response.body}");
       return "Erro ${response.statusCode}: ${response.body}";
     }
   } catch (e) {
-    print("Erro de conexão: $e");
-    return "Erro de conexão ou timeout.";
+    return "Erro ao conectar ao Ollama: $e";
   }
 }
 
@@ -69,11 +58,11 @@ class _ChatPageState extends State<ChatPage> {
     String responseText = "";
 
     if (imageFile != null) {
-      responseText = await sendMessageToHuggingFace(
-        "O usuário enviou uma foto relacionada à dieta. Dê sugestões nutricionais considerando que pode ser uma refeição.",
+      responseText = await sendMessageToOllama(
+        "O usuário enviou uma foto de comida. Dê sugestões nutricionais como um nutricionista."
       );
     } else {
-      responseText = await sendMessageToHuggingFace(text!);
+      responseText = await sendMessageToOllama(text!);
     }
 
     setState(() {
@@ -93,7 +82,7 @@ class _ChatPageState extends State<ChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Chat com IA (Hugging Face)"),
+        title: const Text("Chat com IA (Qwen 2.5)"),
         backgroundColor: Colors.indigo,
       ),
       body: Column(
@@ -104,9 +93,8 @@ class _ChatPageState extends State<ChatPage> {
               itemBuilder: (ctx, i) {
                 final msg = _messages[i];
                 return Align(
-                  alignment: msg.fromUser
-                      ? Alignment.centerRight
-                      : Alignment.centerLeft,
+                  alignment:
+                      msg.fromUser ? Alignment.centerRight : Alignment.centerLeft,
                   child: Container(
                     margin: const EdgeInsets.all(8),
                     padding: const EdgeInsets.all(10),
@@ -145,7 +133,7 @@ class _ChatPageState extends State<ChatPage> {
             child: TextField(
               controller: _controller,
               decoration: const InputDecoration(
-                hintText: "Fale com a IA sobre sua dieta...",
+                hintText: "Fale com a IA...",
                 border: InputBorder.none,
               ),
               onSubmitted: (text) {
@@ -175,4 +163,3 @@ class _Message {
   final File? image;
   _Message({required this.text, required this.fromUser, this.image});
 }
-
